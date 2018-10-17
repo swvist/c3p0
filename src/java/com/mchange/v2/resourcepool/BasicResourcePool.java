@@ -961,6 +961,10 @@ class BasicResourcePool implements ResourcePool
                 this.wait();
             }
         }
+        catch ( Exception e )
+        {
+            logger.log( MLevel.WARNING, "CP1384 - Handle unknown exception", e );
+        }
         finally
         {
             force_kill_acquires = false;
